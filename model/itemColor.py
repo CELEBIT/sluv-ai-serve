@@ -1,1 +1,0 @@
-# TODO : Building itemColor model
