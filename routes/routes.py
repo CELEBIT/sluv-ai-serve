@@ -1,4 +1,7 @@
 from fastapi import APIRouter
+import os
+import sys
+sys.path.append(os.getcwd())
 from dto.commentReqDto import CommentReqDto
 from dto.itemImgReqDto import ItemImgReqDto
 import kobert
@@ -12,6 +15,6 @@ def checkMaliciousComment(commentReqDto : CommentReqDto):
     return kobert.predict(commentReqDto.comment)
 
 @api.post("/check-item-color")
-def checkMaliciousComment(itemImgReqDto : ItemImgReqDto):
+def checkItemColor(itemImgReqDto : ItemImgReqDto):
     # TODO : Call cleanBot Method
     return yolov8.detect_color(itemImgReqDto.itemImgUrl)
