@@ -18,7 +18,18 @@ def detect_color(path):
     a = results[0].boxes.xywh.detach().cpu().squeeze().numpy().reshape(-1,4)
     
     for i in a:
-        color_result.append(pix[int(i[1])][int(i[0])])
+        rgb = pix[int(i[1])][int(i[0])]
+        hexa = ''
+
+        for ele in rgb:
+            if ele < 16:
+                hexa_answer = '0' + "{0:x}".format(ele)
+                hexa += hexa_answer
+            else:
+                hexa_answer = "{0:x}".format(ele)
+                hexa += hexa_answer
+        
+        color_result.append(hexa)
 
     return color_result
 
