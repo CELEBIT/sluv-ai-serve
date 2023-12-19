@@ -59,7 +59,7 @@ model.load_state_dict(torch.load('/home/test/kobert.pt', map_location=device), s
 def predict(sentence):
     dataset = [[sentence, '0']]
     test = BERTDataset(dataset, 0, 1, tok, vocab, max_len, True, False)
-    test_dataloader = DataLoader(test, batch_size=1, num_workers=2)
+    test_dataloader = DataLoader(test, batch_size=1, num_workers=0)
     model.eval()
 
     for batch_id, (token_ids, valid_length, segment_ids, label) in enumerate(test_dataloader):
