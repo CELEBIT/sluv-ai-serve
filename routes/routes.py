@@ -17,4 +17,4 @@ def checkMaliciousComment(commentReqDto : CommentReqDto):
 @api.post("/check-item-color")
 def checkItemColor(itemImgReqDto : ItemImgReqDto):
     # TODO : Call cleanBot Method
-    return yolov8.detect_color(itemImgReqDto.itemImgUrl)
+    return "#" + yolov8.detect_color(itemImgReqDto.itemImgUrl)[0]
