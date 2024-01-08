@@ -54,7 +54,7 @@ class BERTClassifier(nn.Module):
     
 # 모델 객체 생성
 model = BERTClassifier(bertmodel, dr_rate=0.5).to(device)
-model.load_state_dict(torch.load('/home/test/kobert.pt', map_location=device), strict=False)
+model.load_state_dict(torch.load('/home/sluv-ai-server/kobert.pt', map_location=device), strict=False)
 
 def predict(sentence):
     dataset = [[sentence, '0']]

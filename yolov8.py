@@ -4,7 +4,7 @@ import numpy as np
 import requests
 from io import BytesIO
 
-model = YOLO("/home/test/yolo.pt")
+model = YOLO("/home/sluv-ai-server/yolo.pt")
 
 # 이미지 받는 경로(url)
 url = 'https://www.muji.com/wp-content/uploads/sites/12/2021/02/015.jpg'
