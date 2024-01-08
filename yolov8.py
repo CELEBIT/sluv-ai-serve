@@ -31,6 +31,6 @@ def detect_color(path):
         
         color_result.append(hexa)
 
-    return color_result
+    return color_result[0]
 
 print(detect_color(url))

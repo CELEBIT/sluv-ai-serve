@@ -70,7 +70,7 @@ def predict(sentence):
             logits = logits.detach().cpu().numpy()
             answer = np.argmax(logits)
 
-    return answer
+    return int(answer)
 
 
 print(predict('아니 시발 파이썬 왜 다른 디렉토리에 있는 클래스 임포트를 못해'))
